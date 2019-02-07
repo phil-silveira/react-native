@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Slider, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 export default class SeekBar extends React.Component {
     render() {
@@ -7,7 +7,12 @@ export default class SeekBar extends React.Component {
 
         return (
             <View style={styles.container}>
-                <View><Text style={styles.title}>SeekBar</Text></View>
+                <View><Text style={styles.time}>00:00</Text></View>
+                <View><Slider
+                    style={styles.slider}
+                    maximumTrackTintColor={'#fff'}
+                /></View>
+                <View><Text style={styles.time}>04:03</Text></View>
             </View>
         )
     }
@@ -17,14 +22,17 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: '#000',
-        borderLeftWidth: 5,
-        borderRightWidth: 5
+        paddingLeft: 20,
+        paddingRight: 20
     },
-    title: {
+    time: {
         color: '#fff',
-        fontSize: 20
+        fontSize: 15,
+        opacity: 0.8
+    }, slider: {
+        width: 280
     }
+
 })

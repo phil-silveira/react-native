@@ -16,14 +16,13 @@ export default class AlbumArt extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 3,
+        flex: 4,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#666'
     },
     image: {
-        width: 280,
-        height: 280,
+        width: 330,
+        height: 330,
         resizeMode: 'contain'
     }
 })

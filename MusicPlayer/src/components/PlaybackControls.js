@@ -7,7 +7,6 @@ export default class PlaybackControls extends React.Component {
     }
 
     render() {
-        const { title } = this.props
         const { playing } = this.state
         playButtonImage = (playing) ? require('../img/pause_white.png') : require('../img/play_arrow_white.png')
 
@@ -39,9 +38,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        backgroundColor: '#000',
-        borderLeftWidth: 5,
-        borderRightWidth: 5
+        paddingLeft: 5,
+        paddingRight: 5
     },
     playButton: {
         borderWidth: 2,

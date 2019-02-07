@@ -32,9 +32,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: '#000',
-        borderLeftWidth: 15,
-        borderRightWidth: 15
+        paddingLeft: 25,
+        paddingRight: 25
     },
     detailsContainer: {
         flex: 1,
@@ -54,7 +53,7 @@ const styles = StyleSheet.create({
         width: 25,
         height: 25,
         borderColor: '#fff',
-        borderWidth: 2,
+        borderWidth: 1.5,
         borderRadius: 50,
         opacity: 0.7
     }
