@@ -4,7 +4,8 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 export default class PlaybackControls extends React.Component {
     state = {
         playing: false,
-        suffling: true,
+        suffling: false,
+        repeating: false,
     }
 
     render() {
@@ -25,8 +26,8 @@ export default class PlaybackControls extends React.Component {
                 <TouchableOpacity>
                     <Image style={styles.primaryButton} source={require('../img/skip_next_white.png')} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => { this.setState({ suffling: !this.state.suffling }) }}>
-                    <Image style={(!this.state.suffling) ? { ...styles.secundaryButton, ...styles.activeButton } : styles.secundaryButton} source={require('../img/repeat_white.png')} />
+                <TouchableOpacity onPress={() => { this.setState({ repeating: !this.state.repeating }) }}>
+                    <Image style={(this.state.repeating) ? { ...styles.secundaryButton, ...styles.activeButton } : styles.secundaryButton} source={require('../img/repeat_white.png')} />
                 </TouchableOpacity>
             </View>
         )
