@@ -3,7 +3,8 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 export default class PlaybackControls extends React.Component {
     state = {
-        playing: false
+        playing: false,
+        suffling: true,
     }
 
     render() {
@@ -12,8 +13,8 @@ export default class PlaybackControls extends React.Component {
 
         return (
             <View style={styles.container}>
-                <TouchableOpacity>
-                    <Image style={styles.secundaryButton} source={require('../img/shuffle_white.png')} />
+                <TouchableOpacity onPress={() => { this.setState({ suffling: !this.state.suffling }) }}>
+                    <Image style={(this.state.suffling) ? { ...styles.secundaryButton, ...styles.activeButton } : styles.secundaryButton} source={require('../img/shuffle_white.png')} />
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <Image style={styles.primaryButton} source={require('../img/skip_previous_white.png')} />
@@ -24,8 +25,8 @@ export default class PlaybackControls extends React.Component {
                 <TouchableOpacity>
                     <Image style={styles.primaryButton} source={require('../img/skip_next_white.png')} />
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <Image style={styles.secundaryButton} source={require('../img/repeat_white.png')} />
+                <TouchableOpacity onPress={() => { this.setState({ suffling: !this.state.suffling }) }}>
+                    <Image style={(!this.state.suffling) ? { ...styles.secundaryButton, ...styles.activeButton } : styles.secundaryButton} source={require('../img/repeat_white.png')} />
                 </TouchableOpacity>
             </View>
         )
@@ -54,7 +55,8 @@ const styles = StyleSheet.create({
     },
     secundaryButton: {
         width: 25,
-        height: 25,
-        opacity: 0.7
+        height: 25
+    }, activeButton: {
+        tintColor: '#1abc9ca0'
     }
 })

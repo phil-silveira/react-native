@@ -10,6 +10,7 @@ export default class SeekBar extends React.Component {
                 <View><Text style={styles.time}>00:00</Text></View>
                 <View><Slider
                     style={styles.slider}
+                    minimumTrackTintColor={'#1abc9ca0'}
                     maximumTrackTintColor={'#fff'}
                 /></View>
                 <View><Text style={styles.time}>04:03</Text></View>
