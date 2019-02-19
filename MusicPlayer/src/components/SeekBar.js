@@ -1,19 +1,19 @@
 import React from 'react'
-import { Slider, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Slider, StyleSheet, Text, View } from 'react-native'
 
 export default class SeekBar extends React.Component {
     render() {
-        const { title } = this.props
+        const { currentDuration, trackDuration } = this.props
 
         return (
             <View style={styles.container}>
-                <View><Text style={styles.time}>00:00</Text></View>
+                <View><Text style={styles.time}>{currentDuration}</Text></View>
                 <View><Slider
                     style={styles.slider}
                     minimumTrackTintColor={'#1abc9ca0'}
                     maximumTrackTintColor={'#fff'}
                 /></View>
-                <View><Text style={styles.time}>04:03</Text></View>
+                <View><Text style={styles.time}>{trackDuration}</Text></View>
             </View>
         )
     }
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         opacity: 0.8
     }, slider: {
-        width: 280
+        width: 250
     }
 
 })

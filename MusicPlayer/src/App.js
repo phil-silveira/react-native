@@ -12,14 +12,25 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header title={'Playlist Marrota'} />
-        <AlbumArt />
-        <TrackDetails musicName={'Be yourself'} artistName={'Audioslave'} />
-        <SeekBar />
-        <PlaybackControls />
+        <Header title={music.album} />
+        <AlbumArt image={music.albumArt} />
+        <TrackDetails musicName={music.name} artistName={music.artist} />
+        <SeekBar currentDuration='01:32' trackDuration={music.duration} />
+        <PlaybackControls
+          onPrevius={}
+          onNext={}
+        />
       </View>
     )
   }
+}
+
+const music = {
+  name: 'Be yourself',
+  album: 'Out of Exile',
+  albumArt: 'audioslave_revelations.png',
+  artist: 'Audioslave',
+  duration: '04:55'
 }
 
 const styles = StyleSheet.create({
